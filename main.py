@@ -1,11 +1,11 @@
 import time
 from typing import Any
-from fastapi import HTTPException, Depends
+from fastapi import  HTTPException, Depends
 from core import app
-from .main_module import setup_chain
+from core.main_module import setup_chain
 
 
-
+app = FastAPI()
 @app.post("/api/v1/ask", response_model=Any)
 async def ask_question(data: dict, qa=Depends(setup_chain)):
     """
