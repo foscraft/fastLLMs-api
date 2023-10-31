@@ -9,7 +9,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+source_documents
 # Distribution / packaging
 .Python
 build/
