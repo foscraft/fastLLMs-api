@@ -1,4 +1,5 @@
 from chromadb.config import Settings
+
 from .config import get_env_variable
 
 # Define the folder for storing database

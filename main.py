@@ -1,8 +1,14 @@
 import time
 from typing import Any
-from fastapi import  HTTPException, Depends
+
+from fastapi import (
+    Depends,
+    HTTPException,
+)
+
 from core import app
 from core.main_module import setup_chain
+
 
 @app.post("/api/v1/ask", response_model=Any)
 async def ask_question(data: dict, qa=Depends(setup_chain)):
@@ -21,9 +27,7 @@ async def ask_question(data: dict, qa=Depends(setup_chain)):
     res = qa(query)
     answer, docs = (
         res["result"],
-        []
-        if app.state.config.get("HIDE_SOURCE", False)
-        else res["source_documents"],
+        [] if app.state.config.get("HIDE_SOURCE", False) else res["source_documents"],
     )
     end = time.time()
 

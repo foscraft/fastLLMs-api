@@ -1,12 +1,14 @@
 # vector_store_setup.py
 
 from langchain.vectorstores import Chroma
-from .embeddings_setup import setup_embeddings_model
+
 from .config import get_env_variable
 from .constants import CHROMA_SETTINGS
+from .embeddings_setup import setup_embeddings_model
+
 
 def setup_chroma_vector_store():
-    """to handle the setup of the Chroma vector store. 
+    """to handle the setup of the Chroma vector store.
     This will help keep the database-related code organized.
     """
     persist_directory = get_env_variable("PERSIST_DIRECTORY")
