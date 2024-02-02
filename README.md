@@ -9,7 +9,7 @@ This project is about building an API using FastAPI, which allows users to have 
 #### Query own data
 It also allows users to query their own data by first creating embeddings by running the..
 ```bash
-python3 ingest.py
+python3 create_embeddings.py
 ```
 To generate embeddings.
 
